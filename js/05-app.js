@@ -1,24 +1,22 @@
-// Explicit binding
 
-// Existe otra forma de hacer binding y es con EXPLICITI BINDING...
-
-function persona(el1, el2) {
-    console.log(`Mi Nombre es: ${this.name} & I  listen: ${el1} & ${el2} `);
+//la maravilla del explicit binding; cine
+function persona(el1,el2){
+    console.log(`mi nombre es ${this.nombre} y escucho ${el1} y ${el2}`);
 }
-const informacion = {
-    name: 'Juan',
-    job: 'Developer'
+
+const cliente = {
+    nombre : "camilo"
 }
-const musicaFavorita = ['Heavy Metal', 'Rock'];
 
-// UTILIZAREMOS un método llamado .call, .call existe en todas las funciones de Javascript, y puedes pasarle digamos un objeto o arreglo dentro de la función... MUY IMPORTANTE esque nota como el segundo argumento es un array, en .call tienes que pasar cada elemento del array de forma individial, con su posición...
-persona.call(informacion, musicaFavorita[0], musicaFavorita[1]);
+const canciones = ["jazz","merengue"];
 
-// explicit binding with .apply, este es exactamente igual a .call, existe en todas las funciones pero toma un array completo...
-persona.apply(informacion, musicaFavorita);
+persona.call(cliente, canciones[0],canciones[1]) // toca pasarle casi que todo de forma individual, por lo menos en los
+// arreglos toca decirle cuales son las posiciones que queremos pasar
 
-// finalmente .bind va a ser como .call en que le pasas cada argumento de forma individual, pero te crea una nueva función..
-const nuevaFn = persona.bind(informacion, musicaFavorita[0], musicaFavorita[1]);
-nuevaFn();
+persona.apply(cliente,canciones) // tranquilamente se le puede pasar los datos directamente 
+// pero tendria que ser cuidadoso con la posición de todo
 
-// Estos 3, .call, .apply y .bind ya son temas más avanzados, pero los he visto en entrevistas de Desarrolladores JavaScript así que es importante que conozcas las diferencias.
+const fn =persona.bind(cliente, canciones[0], canciones[1]) // como un call, solo que toca estar pasandole las posiciones
+// te crea una nueva función y es similar a call
+
+fn()

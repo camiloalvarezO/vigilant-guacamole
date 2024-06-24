@@ -1,20 +1,20 @@
-// implicing bindings.
+// implicit binding consiste que le decimos al objeto de donde va a sacar los datos
 
-// Implicit binding le dira de forma clara a la palabra this donde encontrar sus valores
-const usuario = {
-    nombre: 'Juan',
-    edad: 20,
-    informacion() {
-        console.log(`Mi Nombre es ${this.nombre} y mi edad es ${this.edad}`);
-    }, 
-    mascota: {
-        nombre: 'Hook',
-        edad: 1, 
-        informacion() {
-            console.log(`Mi Nombre es ${this.nombre} y mi edad es ${this.edad}`);
+
+const info = {
+    nombre : "camilo",
+    edad : 26,
+    mostrarNombre(){
+        console.log(`mi nombre es ${this.nombre} y tengo ${this.edad} años`);
+    },
+    mascota : {
+        nombre: "hook",
+        edad : 3,
+        mostrarNombre(){
+            console.log(`mi nombre es ${this.nombre} y tengo ${this.edad} años`);
         }
     }
 }
 
-usuario.informacion();
-usuario.mascota.informacion();
+info.mostrarNombre()
+info.mascota.mostrarNombre();

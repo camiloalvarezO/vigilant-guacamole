@@ -1,3 +1,24 @@
+// const nombre = "camilo"
+const login = true;
+
+const mostrarNombre = ()=>{
+    const nombre = "miguel"
+    console.log(nombre);
+    if(login){
+
+        const nombre = "Admin"
+        console.log(nombre);
+    }
+
+}
+function funcion2(){
+    // console.log(nombre);
+}
+mostrarNombre();
+funcion2();
+
+
+
 // Scope
 // El Scope es el alcance de una variable, es decir, que funciones o bloques de código tendrán acceso o podrán conocer una variable una vez que es creada..
 
@@ -33,17 +54,17 @@
     
 /** Scope por bloque... */
 
-const login = true;
+// const login = true;
 
-function clienteLogueado() {
+// function clienteLogueado() {
 
-    const cliente = "Juan";
-    console.log(cliente);
+//     const cliente = "Juan";
+//     console.log(cliente);
 
-    if(login) {
-        const cliente = 'Admin';
-        console.log(cliente);
-    }
+//     if(login) {
+//         const cliente = 'Admin';
+//         console.log(cliente);
+//     }
 
-}
-clienteLogueado();
+// }
+// clienteLogueado();

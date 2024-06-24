@@ -1,24 +1,46 @@
-// self se refiere a la ventana global, 
 
-self.onload = () => {
-    console.log('Ventana Lista');
+self.onload = ()=>{
+    console.log("ventana cargada");
 }
 
-window.onload = () => {
-    console.log('Ventana lista');
-}
+// const producto = {
+//     nombre : `monitor 20 pulgadas`,
+//     precio : 40,
+//     disponible : true,
+//     mostrarInfo: function(){
+//         const self = this
+//         return console.log(`el producto ${self.nombre} tiene un precio de ${self.precio}`);
+//     }
+// }
 
 
-// Ahora muchas personas utilizan self de la sig forma...
 
+
+// window.nombre = `mondongo`;  // no funcionaría porque se refiere al ambito local del objeto
+// const producto = {
+    
+//     precio : 40,
+//     disponible : true,
+//     mostrarInfo: function(){
+//         const self = this
+//         return `el producto ${self.nombre} tiene un precio de ${self.precio}`;
+//     }
+
+// }
+
+
+window.nombre = `mondongo`;  //  funcionaría porque se refiere a la ventana global 
+window.precio = 23234;
 const producto = {
-    nombre: "Monitor 20 pulgadas",
-    precio: 30,
-    disponible: true,
-    mostrarInfo: function() {
-        const self = this;
-        return `El Producto: ${self.nombre}  tiene un precio de ${self.precio}`;
+    
+    precio : 40,
+    disponible : true,
+    mostrarInfo: function(){
+        
+        return `el producto ${self.nombre} tiene un precio de ${window.precio}`; // precio sería 
+        // colocarlo en la ventana global como self o window
     }
+
 }
 
-console.log(producto.mostrarInfo());
+console.log(  producto.mostrarInfo());
